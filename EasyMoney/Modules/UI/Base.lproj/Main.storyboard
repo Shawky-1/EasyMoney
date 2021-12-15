@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mgk-5K-ftf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lan-Ku-hfB">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -101,7 +102,15 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Next">
+                                            <attributes>
+                                                <font key="NSFont" size="25" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                         <real key="value" value="0.29999999999999999"/>
@@ -131,6 +140,42 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-PJ-er4">
+                                <rect key="frame" x="309" y="781" width="60" height="24"/>
+                                <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="6L3-An-pAr"/>
+                                    <constraint firstAttribute="height" constant="24" id="PDm-DJ-uL6"/>
+                                </constraints>
+                                <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Skip">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SkipButtonClicked:" destination="Mgk-5K-ftf" eventType="touchUpInside" id="BiT-mS-MGa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bz2-tG-K71"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,6 +187,8 @@
                             <constraint firstItem="Bz2-tG-K71" firstAttribute="bottom" secondItem="7in-Vr-e7J" secondAttribute="bottom" constant="45" id="XMJ-3x-Scg"/>
                             <constraint firstItem="7in-Vr-e7J" firstAttribute="centerX" secondItem="Bz2-tG-K71" secondAttribute="centerX" id="fRc-5k-dVz"/>
                             <constraint firstItem="7in-Vr-e7J" firstAttribute="top" secondItem="WiZ-rR-bFD" secondAttribute="bottom" constant="30" id="h1Z-Wa-eK5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fbd-PJ-er4" secondAttribute="trailing" constant="5" id="j0p-fq-lL5"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fbd-PJ-er4" secondAttribute="bottom" constant="5" id="vFw-v7-3Kl"/>
                             <constraint firstItem="Yu2-jP-cFm" firstAttribute="trailing" secondItem="Bz2-tG-K71" secondAttribute="trailing" id="zXI-LJ-sZN"/>
                         </constraints>
                     </view>
@@ -149,11 +196,12 @@
                         <outlet property="collectionView" destination="Yu2-jP-cFm" id="RrZ-KC-uMZ"/>
                         <outlet property="nextButton" destination="7in-Vr-e7J" id="jig-s0-630"/>
                         <outlet property="pageControl" destination="WiZ-rR-bFD" id="oLQ-0l-MPW"/>
+                        <outlet property="skipButton" destination="fbd-PJ-er4" id="lNH-bq-N8d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIT-M9-jqg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1073.8461538461538" y="83.175355450236964"/>
+            <point key="canvasLocation" x="-55" y="82"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xOv-dv-zew">
@@ -185,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xH-Yf-wK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="1518"/>
+            <point key="canvasLocation" x="1442" y="1518"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="L3K-dG-FOm">
@@ -201,28 +249,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CV6-o0-OqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="1518"/>
+            <point key="canvasLocation" x="2163" y="1518"/>
         </scene>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="uLA-ub-bcc">
             <objects>
-                <viewController id="Aqs-H0-BpQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="Aqs-H0-BpQ" customClass="HomeVC" customModule="EasyMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oTE-Qm-kdM">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="9sb-6N-zwa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="x4m-OS-IlU"/>
+                    <navigationItem key="navigationItem" title="Home" id="x4m-OS-IlU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEv-Eg-ZTX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55" y="1519"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab BarVC-->
         <scene sceneID="cXg-ug-3YR">
             <objects>
-                <tabBarController id="lan-Ku-hfB" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarVC" id="lan-Ku-hfB" customClass="MainTabBarVC" customModule="EasyMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eeI-zu-mAK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -237,16 +285,18 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCo-FK-FQy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="83"/>
+            <point key="canvasLocation" x="1075" y="83"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="oT8-j7-ivN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gXu-6Q-d3G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Pwk-EB-3dc"/>
+                <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="gXu-6Q-d3G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="Pwk-EB-3dc">
+                        <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IbT-Na-9rS">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="IbT-Na-9rS">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -258,11 +308,11 @@
             </objects>
             <point key="canvasLocation" x="-55.38461538461538" y="819.66824644549763"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="2vr-Rh-fC9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sEs-4U-YjO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="8bQ-3t-BeE"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="8bQ-3t-BeE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dXA-KR-zqh">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -277,11 +327,11 @@
             </objects>
             <point key="canvasLocation" x="710.76923076923072" y="819.66824644549763"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="xdd-pw-SO7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xf0-KM-zDT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7dE-G6-oBt"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="7dE-G6-oBt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E0E-d1-617">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -294,13 +344,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWH-42-SqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461.5384615384614" y="819.66824644549763"/>
+            <point key="canvasLocation" x="2162" y="820"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="OTq-o7-epf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ljc-hi-2G2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jrf-g9-GC1"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="jrf-g9-GC1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FZP-VQ-oiS">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -313,10 +363,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOf-Gs-2Ql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221.5384615384614" y="819.66824644549763"/>
+            <point key="canvasLocation" x="1442" y="820"/>
         </scene>
     </scenes>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

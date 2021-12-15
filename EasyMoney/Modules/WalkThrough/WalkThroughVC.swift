@@ -8,7 +8,8 @@
 import UIKit
 
 class WalkThroughVC: UIViewController {
-
+    
+    @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -33,9 +34,9 @@ class WalkThroughVC: UIViewController {
     @IBAction func NextButtonClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1{
             UserDefaults.standard.setValue(true, forKey: "hasViewedWalkthrough")
-//            let tabBar = MainTabBar.instantiate(storyboard: .main)
-//            tabBar.modalPresentationStyle = .fullScreen
-//            present(tabBar, animated: true, completion: nil)
+            let tabBar = MainTabBarVC.instantiate(storyboard: .main)
+            tabBar.modalPresentationStyle = .fullScreen
+            present(tabBar, animated: true, completion: nil)
         } else {
             currentPage += 1
             let rect = collectionView.layoutAttributesForItem(at: IndexPath(row: currentPage, section: 0))?.frame
@@ -43,8 +44,14 @@ class WalkThroughVC: UIViewController {
         }
     }
     
+    @IBAction func SkipButtonClicked(_ sender: UIButton) {
+        
+        UserDefaults.standard.setValue(true, forKey: "hasViewedWalkthrough")
+        let tabBar = MainTabBarVC.instantiate(storyboard: .main)
+        tabBar.modalPresentationStyle = .fullScreen
+        present(tabBar, animated: true, completion: nil)
+    }
 }
-
 extension WalkThroughVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return slides.count
