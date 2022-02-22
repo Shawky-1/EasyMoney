@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E214ED382764EA9000274FD3 /* WalkThroughData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214ED372764EA9000274FD3 /* WalkThroughData.swift */; };
+		E274295B276D0AEE00D6676D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2742959276D0AEE00D6676D /* HomeCell.swift */; };
+		E274295C276D0AEE00D6676D /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E274295A276D0AEE00D6676D /* HomeCell.xib */; };
 		E27F16CE27697F36000EC632 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27F16CD27697F36000EC632 /* HomeVM.swift */; };
 		E27F16D027698145000EC632 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27F16CF27698145000EC632 /* MainTabBarVC.swift */; };
+		E28EBE7B276D577400D2BAE2 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28EBE7A276D577400D2BAE2 /* MainTabBar.swift */; };
 		E29A787927664EB3004F6111 /* WalkThroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A787827664EB3004F6111 /* WalkThroughCell.swift */; };
 		E29FFF18273E9950001AA2A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29FFF17273E9950001AA2A4 /* AppDelegate.swift */; };
 		E29FFF1A273E9950001AA2A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29FFF19273E9950001AA2A4 /* SceneDelegate.swift */; };
@@ -54,6 +57,8 @@
 		E2DB4C6827692E5100A46B94 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB4C6727692E5100A46B94 /* HomeVC.swift */; };
 		E2DB4C6B27693A1700A46B94 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB4C6A27693A1700A46B94 /* BaseWireframe.swift */; };
 		E2DB4C6D27693A2300A46B94 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB4C6C27693A2300A46B94 /* ViewModel.swift */; };
+		E2DE3DE627C525B100156165 /* CardColelctionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE3DE427C525B100156165 /* CardColelctionViewCell.swift */; };
+		E2DE3DE727C525B100156165 /* CardColelctionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DE3DE527C525B100156165 /* CardColelctionViewCell.xib */; };
 		EBEAFF395BCBA3AE26429A4E /* Pods_EasyMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7BD2C098D656CDFBDB0B394 /* Pods_EasyMoney.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +67,11 @@
 		A7BD2C098D656CDFBDB0B394 /* Pods_EasyMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B902C07E4FA9665AF5C8DB9B /* Pods-EasyMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyMoney.release.xcconfig"; path = "Target Support Files/Pods-EasyMoney/Pods-EasyMoney.release.xcconfig"; sourceTree = "<group>"; };
 		E214ED372764EA9000274FD3 /* WalkThroughData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughData.swift; sourceTree = "<group>"; };
+		E2742959276D0AEE00D6676D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		E274295A276D0AEE00D6676D /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		E27F16CD27697F36000EC632 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		E27F16CF27698145000EC632 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		E28EBE7A276D577400D2BAE2 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		E29A787827664EB3004F6111 /* WalkThroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughCell.swift; sourceTree = "<group>"; };
 		E29FFF14273E9950001AA2A4 /* EasyMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29FFF17273E9950001AA2A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +118,8 @@
 		E2DB4C6727692E5100A46B94 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E2DB4C6A27693A1700A46B94 /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		E2DB4C6C27693A2300A46B94 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E2DE3DE427C525B100156165 /* CardColelctionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColelctionViewCell.swift; sourceTree = "<group>"; };
+		E2DE3DE527C525B100156165 /* CardColelctionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardColelctionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +149,43 @@
 				A7BD2C098D656CDFBDB0B394 /* Pods_EasyMoney.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2742954276D0A6400D6676D /* Reusable cells */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE3DE327C5256A00156165 /* CardCell */,
+				E2742958276D0ADB00D6676D /* HomeCell */,
+			);
+			path = "Reusable cells";
+			sourceTree = "<group>";
+		};
+		E2742955276D0A8900D6676D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E28EBE7C276D578100D2BAE2 /* TabBar */,
+				E2C38090274173560069E9B3 /* WalkThrough */,
+				E2DB4C6427692E1F00A46B94 /* Home */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E2742958276D0ADB00D6676D /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2742959276D0AEE00D6676D /* HomeCell.swift */,
+				E274295A276D0AEE00D6676D /* HomeCell.xib */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
+		E28EBE7C276D578100D2BAE2 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E27F16CF27698145000EC632 /* MainTabBarVC.swift */,
+				E28EBE7A276D577400D2BAE2 /* MainTabBar.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		E29FFF0B273E9950001AA2A4 = {
@@ -292,9 +339,8 @@
 		E2C3808E274173260069E9B3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E27F16CF27698145000EC632 /* MainTabBarVC.swift */,
-				E2C38090274173560069E9B3 /* WalkThrough */,
-				E2DB4C6427692E1F00A46B94 /* Home */,
+				E2742955276D0A8900D6676D /* ViewControllers */,
+				E2742954276D0A6400D6676D /* Reusable cells */,
 				E2C3808F274173480069E9B3 /* UI */,
 			);
 			path = Modules;
@@ -336,6 +382,15 @@
 				E2DB4C6C27693A2300A46B94 /* ViewModel.swift */,
 			);
 			path = "Base UI";
+			sourceTree = "<group>";
+		};
+		E2DE3DE327C5256A00156165 /* CardCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE3DE427C525B100156165 /* CardColelctionViewCell.swift */,
+				E2DE3DE527C525B100156165 /* CardColelctionViewCell.xib */,
+			);
+			path = CardCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,8 +453,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2DE3DE727C525B100156165 /* CardColelctionViewCell.xib in Resources */,
 				E29FFF24273E9952001AA2A4 /* LaunchScreen.storyboard in Resources */,
 				E29FFF21273E9952001AA2A4 /* Assets.xcassets in Resources */,
+				E274295C276D0AEE00D6676D /* HomeCell.xib in Resources */,
 				E29FFF1F273E9950001AA2A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +534,7 @@
 				E2C0FA782769485B0003B07E /* XIB.swift in Sources */,
 				E2C0FA722769485B0003B07E /* UIAplications+Extensions.swift in Sources */,
 				E2C0FA7A2769485B0003B07E /* UICollectionView+EmptyMessage.swift in Sources */,
+				E2DE3DE627C525B100156165 /* CardColelctionViewCell.swift in Sources */,
 				E2C0FA802769485B0003B07E /* EXString.swift in Sources */,
 				E2C0FA712769485B0003B07E /* UIColor+init.swift in Sources */,
 				E2C0FA7B2769485B0003B07E /* UIView+Extentions.swift in Sources */,
@@ -487,9 +545,11 @@
 				E2C0FA862769485B0003B07E /* Array+Extension.swift in Sources */,
 				E2C0FA9F27694A180003B07E /* DataManager.swift in Sources */,
 				E2C0FA7C2769485B0003B07E /* UINavigationController+Ex.swift in Sources */,
+				E274295B276D0AEE00D6676D /* HomeCell.swift in Sources */,
 				E2C0FA832769485B0003B07E /* UITableView+Scrolling.swift in Sources */,
 				E2C0FA94276948D70003B07E /* SearchManager.swift in Sources */,
 				E29A787927664EB3004F6111 /* WalkThroughCell.swift in Sources */,
+				E28EBE7B276D577400D2BAE2 /* MainTabBar.swift in Sources */,
 				E2C0FA852769485B0003B07E /* UIBarButtonItem+Extension.swift in Sources */,
 				E2C0FA92276948D70003B07E /* Activity.swift in Sources */,
 				E2C0FA762769485B0003B07E /* TableViewEx.swift in Sources */,
@@ -631,6 +691,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -646,6 +707,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5V8XD8Y85;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EasyMoney/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -674,6 +736,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5V8XD8Y85;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EasyMoney/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

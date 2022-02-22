@@ -9,8 +9,27 @@ import UIKit
 
 class HomeVC: BaseWireframe<HomeVM> {
 
+    @IBOutlet weak var tableView: UITableView!{
+        didSet{
+            tableView.delegate = HomeDataSrc
+            tableView.dataSource = HomeDataSrc
+            tableView.tableFooterView = UIView()
+
+        }
+    }
+    @IBOutlet weak var collectionView: UICollectionView!{
+        didSet{
+            collectionView.delegate = HomeDataSrc
+            collectionView.dataSource = HomeDataSrc
+        }
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCells()
 
     }
     
@@ -26,6 +45,24 @@ class HomeVC: BaseWireframe<HomeVM> {
             present(controller, animated: true, completion: nil)
         }
     }
+    
+    
+    func registerCells(){
+        tableView.register(cell: HomeCell.self)
+        collectionView.register(cell: CardColelctionViewCell.self)
+    }
+    
+    func updateUI() {
+        tableView.reloadData()
+    }
+    
+    private lazy var HomeDataSrc: HomeDataSrc = {
+        let src = EasyMoney.HomeDataSrc()
+        src.viewModel = viewModel
+        return src
+    }()
+    
+    
     
     override func bind(viewModel: HomeVM) {
         viewModel
