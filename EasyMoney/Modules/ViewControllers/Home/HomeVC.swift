@@ -30,6 +30,7 @@ class HomeVC: BaseWireframe<HomeVM> {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
+        
 
     }
     
