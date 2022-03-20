@@ -43,14 +43,14 @@
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$69.420" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIO-B8-aVm">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$69.420" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIO-B8-aVm">
                         <rect key="frame" x="525" y="72.5" width="93" height="27.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zis-5j-B87">
-                        <rect key="frame" x="170" y="10" width="60" height="26.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zis-5j-B87">
+                        <rect key="frame" x="170" y="10" width="287" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -62,6 +62,7 @@
                     <constraint firstItem="hIO-B8-aVm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DoJ-BC-Eiz"/>
                     <constraint firstItem="zis-5j-B87" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="G7G-GT-Y5I"/>
                     <constraint firstAttribute="trailing" secondItem="hIO-B8-aVm" secondAttribute="trailing" constant="20" id="Htj-Tl-s1P"/>
+                    <constraint firstItem="zis-5j-B87" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.45" id="M05-z1-IAk"/>
                     <constraint firstItem="x9a-fj-Mhv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="NG9-u2-SFb"/>
                     <constraint firstAttribute="bottom" secondItem="x9a-fj-Mhv" secondAttribute="bottom" constant="10" id="Yfh-Ba-opQ"/>
                     <constraint firstItem="zis-5j-B87" firstAttribute="leading" secondItem="x9a-fj-Mhv" secondAttribute="trailing" constant="8" symbolic="YES" id="k7C-bh-JXO"/>
@@ -76,7 +77,7 @@
                 <outlet property="price" destination="hIO-B8-aVm" id="ZsA-dF-31x"/>
                 <outlet property="type" destination="qgg-A7-RKf" id="ZgE-gn-mzq"/>
             </connections>
-            <point key="canvasLocation" x="366.66666666666669" y="142.63392857142856"/>
+            <point key="canvasLocation" x="366.66666666666669" y="141.29464285714286"/>
         </tableViewCell>
     </objects>
     <resources>

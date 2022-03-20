@@ -18,6 +18,12 @@ target 'EasyMoney' do
   pod 'RealmSwift'
   pod 'Toast-Swift'
   pod 'NVActivityIndicatorView'
-  pod 'Lightbox'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'IQKeyboardManagerSwift'
+
+
 
 end

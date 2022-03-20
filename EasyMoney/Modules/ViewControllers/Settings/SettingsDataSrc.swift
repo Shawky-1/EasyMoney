@@ -10,10 +10,11 @@ import UIKit
 
 class SettingsDataSrc: NSObject {
     var viewModel: SettingsVM!
+    
 
 }
 
-let dataSettings = ["Test1", "Test2", "Test3"]
+let dataSettings = ["About", "Transaction History", "Settings", "Logout"]
 
 extension SettingsDataSrc: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

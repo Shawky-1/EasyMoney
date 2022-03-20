@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		E214ED382764EA9000274FD3 /* WalkThroughData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214ED372764EA9000274FD3 /* WalkThroughData.swift */; };
+		E22AEB5F27D262E1004F68CF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22AEB5E27D262E1004F68CF /* LoginVC.swift */; };
+		E22AEB6427D2C733004F68CF /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22AEB6227D2C733004F68CF /* RegisterVC.swift */; };
+		E2707ABB27D5186D00BB8DF0 /* TransactionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2707ABA27D5186D00BB8DF0 /* TransactionVM.swift */; };
+		E2707ABD27D5187500BB8DF0 /* TransactionDataSrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2707ABC27D5187500BB8DF0 /* TransactionDataSrc.swift */; };
+		E2707ABF27D582B600BB8DF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2707ABE27D582B600BB8DF0 /* GoogleService-Info.plist */; };
+		E2723C4327D4640600C36946 /* TransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2723C4227D4640600C36946 /* TransactionVC.swift */; };
+		E2723C4727D4E8D200C36946 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2723C4527D4E8D200C36946 /* TransactionCell.swift */; };
+		E2723C4827D4E8D200C36946 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2723C4627D4E8D200C36946 /* TransactionCell.xib */; };
 		E274295B276D0AEE00D6676D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2742959276D0AEE00D6676D /* HomeCell.swift */; };
 		E274295C276D0AEE00D6676D /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E274295A276D0AEE00D6676D /* HomeCell.xib */; };
 		E27F16CE27697F36000EC632 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27F16CD27697F36000EC632 /* HomeVM.swift */; };
 		E27F16D027698145000EC632 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27F16CF27698145000EC632 /* MainTabBarVC.swift */; };
 		E28EBE7B276D577400D2BAE2 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28EBE7A276D577400D2BAE2 /* MainTabBar.swift */; };
 		E29A787927664EB3004F6111 /* WalkThroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A787827664EB3004F6111 /* WalkThroughCell.swift */; };
+		E29D20E927E7A240008E8DF3 /* DialedNumbersFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D20E827E7A240008E8DF3 /* DialedNumbersFooter.swift */; };
 		E29FFF18273E9950001AA2A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29FFF17273E9950001AA2A4 /* AppDelegate.swift */; };
 		E29FFF1A273E9950001AA2A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29FFF19273E9950001AA2A4 /* SceneDelegate.swift */; };
 		E29FFF1F273E9950001AA2A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29FFF1D273E9950001AA2A4 /* Main.storyboard */; };
 		E29FFF21273E9952001AA2A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29FFF20273E9952001AA2A4 /* Assets.xcassets */; };
 		E29FFF24273E9952001AA2A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29FFF22273E9952001AA2A4 /* LaunchScreen.storyboard */; };
+		E2A893FE27DBD51900880582 /* TransactionsNumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A893FD27DBD51900880582 /* TransactionsNumPad.swift */; };
+		E2A8940027DC3ADF00880582 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A893FF27DC3ADF00880582 /* UIView+Layout.swift */; };
+		E2A8940227DFA15A00880582 /* DialedNumbersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8940127DFA15A00880582 /* DialedNumbersHeader.swift */; };
 		E2C0FA712769485B0003B07E /* UIColor+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0FA592769485B0003B07E /* UIColor+init.swift */; };
 		E2C0FA722769485B0003B07E /* UIAplications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0FA5A2769485B0003B07E /* UIAplications+Extensions.swift */; };
 		E2C0FA732769485B0003B07E /* UIAlert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0FA5B2769485B0003B07E /* UIAlert+Extension.swift */; };
@@ -72,12 +84,21 @@
 		A7BD2C098D656CDFBDB0B394 /* Pods_EasyMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B902C07E4FA9665AF5C8DB9B /* Pods-EasyMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyMoney.release.xcconfig"; path = "Target Support Files/Pods-EasyMoney/Pods-EasyMoney.release.xcconfig"; sourceTree = "<group>"; };
 		E214ED372764EA9000274FD3 /* WalkThroughData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughData.swift; sourceTree = "<group>"; };
+		E22AEB5E27D262E1004F68CF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E22AEB6227D2C733004F68CF /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		E2707ABA27D5186D00BB8DF0 /* TransactionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVM.swift; sourceTree = "<group>"; };
+		E2707ABC27D5187500BB8DF0 /* TransactionDataSrc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataSrc.swift; sourceTree = "<group>"; };
+		E2707ABE27D582B600BB8DF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2723C4227D4640600C36946 /* TransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVC.swift; sourceTree = "<group>"; };
+		E2723C4527D4E8D200C36946 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		E2723C4627D4E8D200C36946 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		E2742959276D0AEE00D6676D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		E274295A276D0AEE00D6676D /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		E27F16CD27697F36000EC632 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		E27F16CF27698145000EC632 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		E28EBE7A276D577400D2BAE2 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		E29A787827664EB3004F6111 /* WalkThroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughCell.swift; sourceTree = "<group>"; };
+		E29D20E827E7A240008E8DF3 /* DialedNumbersFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialedNumbersFooter.swift; sourceTree = "<group>"; };
 		E29FFF14273E9950001AA2A4 /* EasyMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29FFF17273E9950001AA2A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E29FFF19273E9950001AA2A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +106,9 @@
 		E29FFF20273E9952001AA2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E29FFF23273E9952001AA2A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E29FFF25273E9952001AA2A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2A893FD27DBD51900880582 /* TransactionsNumPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsNumPad.swift; sourceTree = "<group>"; };
+		E2A893FF27DC3ADF00880582 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../../../../../Downloads/NumPadLBTA/NumPadLBTA/UIView+Layout.swift"; sourceTree = "<group>"; };
+		E2A8940127DFA15A00880582 /* DialedNumbersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialedNumbersHeader.swift; sourceTree = "<group>"; };
 		E2C0FA592769485B0003B07E /* UIColor+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+init.swift"; sourceTree = "<group>"; };
 		E2C0FA5A2769485B0003B07E /* UIAplications+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAplications+Extensions.swift"; sourceTree = "<group>"; };
 		E2C0FA5B2769485B0003B07E /* UIAlert+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlert+Extension.swift"; sourceTree = "<group>"; };
@@ -161,9 +185,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E22AEB5D27D262C6004F68CF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E22AEB5E27D262E1004F68CF /* LoginVC.swift */,
+				E22AEB6227D2C733004F68CF /* RegisterVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E2723C4127D463DE00C36946 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				E2723C4227D4640600C36946 /* TransactionVC.swift */,
+				E2707ABA27D5186D00BB8DF0 /* TransactionVM.swift */,
+				E2707ABC27D5187500BB8DF0 /* TransactionDataSrc.swift */,
+				E2A893FD27DBD51900880582 /* TransactionsNumPad.swift */,
+				E2A8940127DFA15A00880582 /* DialedNumbersHeader.swift */,
+				E29D20E827E7A240008E8DF3 /* DialedNumbersFooter.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		E2723C4427D4642A00C36946 /* TransactionCells */ = {
+			isa = PBXGroup;
+			children = (
+				E2723C4527D4E8D200C36946 /* TransactionCell.swift */,
+				E2723C4627D4E8D200C36946 /* TransactionCell.xib */,
+			);
+			path = TransactionCells;
+			sourceTree = "<group>";
+		};
 		E2742954276D0A6400D6676D /* Reusable cells */ = {
 			isa = PBXGroup;
 			children = (
+				E2723C4427D4642A00C36946 /* TransactionCells */,
 				E2D6E63A27CAB2D8005951EA /* SettingsCell */,
 				E2DE3DE327C5256A00156165 /* CardCell */,
 				E2742958276D0ADB00D6676D /* HomeCell */,
@@ -174,9 +230,12 @@
 		E2742955276D0A8900D6676D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E22AEB5D27D262C6004F68CF /* Login */,
 				E28EBE7C276D578100D2BAE2 /* TabBar */,
 				E2C38090274173560069E9B3 /* WalkThrough */,
 				E2DB4C6427692E1F00A46B94 /* Home */,
+				E2723C4127D463DE00C36946 /* Transaction */,
+				E2D6E63527CAABBE005951EA /* Settings */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -225,6 +284,7 @@
 				E2C3808D2741730D0069E9B3 /* Data */,
 				E2C3808E274173260069E9B3 /* Modules */,
 				E29FFF25273E9952001AA2A4 /* Info.plist */,
+				E2707ABE27D582B600BB8DF0 /* GoogleService-Info.plist */,
 			);
 			path = EasyMoney;
 			sourceTree = "<group>";
@@ -292,6 +352,7 @@
 		E2C0FA9727694A180003B07E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E2A893FF27DC3ADF00880582 /* UIView+Layout.swift */,
 				E2C0FA9827694A180003B07E /* MoyaProviderBuilder.swift */,
 				E2C0FA9927694A180003B07E /* APIConstants.swift */,
 				E2C0FA9A27694A180003B07E /* Single+Request.swift */,
@@ -351,7 +412,6 @@
 			isa = PBXGroup;
 			children = (
 				E2742955276D0A8900D6676D /* ViewControllers */,
-				E2D6E63527CAABBE005951EA /* Settings */,
 				E2742954276D0A6400D6676D /* Reusable cells */,
 				E2C3808F274173480069E9B3 /* UI */,
 			);
@@ -442,6 +502,8 @@
 			dependencies = (
 			);
 			name = EasyMoney;
+			packageProductDependencies = (
+			);
 			productName = EasyMoney;
 			productReference = E29FFF14273E9950001AA2A4 /* EasyMoney.app */;
 			productType = "com.apple.product-type.application";
@@ -470,6 +532,8 @@
 				Base,
 			);
 			mainGroup = E29FFF0B273E9950001AA2A4;
+			packageReferences = (
+			);
 			productRefGroup = E29FFF15273E9950001AA2A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -485,7 +549,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2D6E63E27CAB319005951EA /* SettingsCell.xib in Resources */,
+				E2707ABF27D582B600BB8DF0 /* GoogleService-Info.plist in Resources */,
 				E2DE3DE727C525B100156165 /* CardColelctionViewCell.xib in Resources */,
+				E2723C4827D4E8D200C36946 /* TransactionCell.xib in Resources */,
 				E29FFF24273E9952001AA2A4 /* LaunchScreen.storyboard in Resources */,
 				E29FFF21273E9952001AA2A4 /* Assets.xcassets in Resources */,
 				E274295C276D0AEE00D6676D /* HomeCell.xib in Resources */,
@@ -550,6 +616,7 @@
 				E2D6E63427CAABB7005951EA /* SettingsVC.swift in Sources */,
 				E2C0FA822769485B0003B07E /* UIView+Gestures.swift in Sources */,
 				E2C0FA842769485B0003B07E /* TextFieldExtensions.swift in Sources */,
+				E29D20E927E7A240008E8DF3 /* DialedNumbersFooter.swift in Sources */,
 				E2D13BDB276A623F0007752E /* HomeDataSrc.swift in Sources */,
 				E2C0FA7D2769485B0003B07E /* CollectionViewEx.swift in Sources */,
 				E2C0FA7E2769485B0003B07E /* IntExtension.swift in Sources */,
@@ -557,6 +624,7 @@
 				E2C0FA90276948D70003B07E /* ValidationManger.swift in Sources */,
 				E214ED382764EA9000274FD3 /* WalkThroughData.swift in Sources */,
 				E2C0FA752769485B0003B07E /* UIViewController+Ex.swift in Sources */,
+				E22AEB6427D2C733004F68CF /* RegisterVC.swift in Sources */,
 				E2C0FAA227694A180003B07E /* Single+Request.swift in Sources */,
 				E2DB4C6B27693A1700A46B94 /* BaseWireframe.swift in Sources */,
 				E2C0FA8F276948D70003B07E /* NotifyMessage.swift in Sources */,
@@ -564,19 +632,27 @@
 				E2C0FAA327694A180003B07E /* NetworkError.swift in Sources */,
 				E2D6E63D27CAB319005951EA /* SettingsCell.swift in Sources */,
 				E27F16D027698145000EC632 /* MainTabBarVC.swift in Sources */,
+				E2A893FE27DBD51900880582 /* TransactionsNumPad.swift in Sources */,
+				E2723C4727D4E8D200C36946 /* TransactionCell.swift in Sources */,
+				E22AEB5F27D262E1004F68CF /* LoginVC.swift in Sources */,
 				E2C0FA872769485B0003B07E /* UIView+constrains.swift in Sources */,
 				E2C0FA782769485B0003B07E /* XIB.swift in Sources */,
 				E2C0FA722769485B0003B07E /* UIAplications+Extensions.swift in Sources */,
 				E2C0FA7A2769485B0003B07E /* UICollectionView+EmptyMessage.swift in Sources */,
 				E2DE3DE627C525B100156165 /* CardColelctionViewCell.swift in Sources */,
 				E2C0FA802769485B0003B07E /* EXString.swift in Sources */,
+				E2707ABD27D5187500BB8DF0 /* TransactionDataSrc.swift in Sources */,
+				E2707ABB27D5186D00BB8DF0 /* TransactionVM.swift in Sources */,
 				E2C0FA712769485B0003B07E /* UIColor+init.swift in Sources */,
 				E2C0FA7B2769485B0003B07E /* UIView+Extentions.swift in Sources */,
 				E2C0FA732769485B0003B07E /* UIAlert+Extension.swift in Sources */,
+				E2723C4327D4640600C36946 /* TransactionVC.swift in Sources */,
 				E29FFF1A273E9950001AA2A4 /* SceneDelegate.swift in Sources */,
 				E27F16CE27697F36000EC632 /* HomeVM.swift in Sources */,
+				E2A8940227DFA15A00880582 /* DialedNumbersHeader.swift in Sources */,
 				E2C0FA772769485B0003B07E /* UITableView+EmptyMessageExtension.swift in Sources */,
 				E2C0FA862769485B0003B07E /* Array+Extension.swift in Sources */,
+				E2A8940027DC3ADF00880582 /* UIView+Layout.swift in Sources */,
 				E2C0FA9F27694A180003B07E /* DataManager.swift in Sources */,
 				E2C0FA7C2769485B0003B07E /* UINavigationController+Ex.swift in Sources */,
 				E274295B276D0AEE00D6676D /* HomeCell.swift in Sources */,
@@ -741,6 +817,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M5V8XD8Y85;
@@ -758,6 +835,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AhmedShawky.EasyMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -770,6 +848,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M5V8XD8Y85;
@@ -787,6 +866,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AhmedShawky.EasyMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
