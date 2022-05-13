@@ -25,14 +25,10 @@ class TransactionVM: ViewModel {
 
 extension TransactionVM{
     
-    
-
-    
-    func createSliderView(){
-//        let window = UIApplication.shared.keyWindow
-//        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-//        containerView.frame = TransactionVC.view.frame
-//        
-//        window?.addSubview(containerView)
+    func backSpace(text: String)-> String {
+        var inputText: String = text
+        inputText.remove(at: inputText.index(before: inputText.endIndex))
+        
+        return text
     }
 }

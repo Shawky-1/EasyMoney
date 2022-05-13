@@ -14,16 +14,17 @@ class TransactionsNumPad: UICollectionViewCell {
     let backImage = UIImageView()
     let defaultColor = UIColor(white: 0.92, alpha: 1)
     
-    override var isHighlighted: Bool{
-        didSet{
-            backgroundColor = isHighlighted ? .darkGray : UIColor(white: 0.92, alpha: 1)
+    //    override var isHighlighted: Bool{
+    //        didSet{
+    //            backgroundColor = isHighlighted ? .darkGray : UIColor(white: 0.92, alpha: 1)
+    //        }
+    //    }
+    override var isSelected: Bool {
+        didSet {
+            animateButton()
         }
     }
-    override var isSelected: Bool{
-        didSet{
-            backgroundColor = isHighlighted ? .darkGray : UIColor(white: 0.92, alpha: 1)
-        }
-    }
+    
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -43,7 +44,7 @@ class TransactionsNumPad: UICollectionViewCell {
         addSubview(stackView)
         stackView.centerInSuperview()
         backImage.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-
+        
         backImage.centerInSuperview()
         
     }
@@ -53,8 +54,20 @@ class TransactionsNumPad: UICollectionViewCell {
         layer.cornerRadius = self.frame.width / 2
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    func animateButton(){
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
+            self.layer.zPosition = self.isSelected ? 1 : -1
+            self.transform = self.isSelected ? CGAffineTransform(scaleX: 1.5, y: 1.5) : CGAffineTransform.identity
+        }, completion: nil)
+        UIView.animate(withDuration: 0.15, delay: 0.0, options: .curveEaseOut, animations: {
+            self.layer.zPosition = self.isSelected ? 1 : -1
+            self.transform = self.isSelected ? CGAffineTransform(scaleX: 1, y: 1) : CGAffineTransform.identity
+        }, completion: nil)
     }
     
 }

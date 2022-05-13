@@ -9,6 +9,7 @@ import UIKit
 import FirebaseFirestore
 
 class HomeVC: BaseWireframe<HomeVM> {
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
     @IBOutlet weak var tableView: UITableView!{
         didSet{
@@ -57,7 +58,7 @@ class HomeVC: BaseWireframe<HomeVM> {
     
     @objc func signUserOut() {
         viewModel.signOut()
-        if let controller = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+        if let controller = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
             controller.modalPresentationStyle = .fullScreen
             present(controller, animated: true, completion: nil)
         }
@@ -70,7 +71,7 @@ class HomeVC: BaseWireframe<HomeVM> {
         let hasViewedWalkthrough = defaults.bool(forKey: "hasViewedWalkthrough")
         if hasViewedWalkthrough { return }
         
-        if let controller = storyboard?.instantiateViewController(withIdentifier: "WalkThroughVC") as? WalkThroughVC {
+        if let controller = mainStoryboard.instantiateViewController(withIdentifier: "WalkThroughVC") as? WalkThroughVC {
             controller.modalPresentationStyle = .fullScreen
             present(controller, animated: true, completion: nil)
         }

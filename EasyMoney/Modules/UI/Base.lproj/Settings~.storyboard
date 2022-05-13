@@ -359,6 +359,55 @@
             </objects>
             <point key="canvasLocation" x="-829.23076923076917" y="81.753554502369667"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="AjW-2k-LZh">
+            <objects>
+                <viewController storyboardIdentifier="SettingsVC" id="Wmb-6t-w8u" customClass="SettingsVC" customModule="EasyMoney" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="woU-fA-T4M">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="glQ-l9-xAR">
+                                <rect key="frame" x="0.0" y="263" width="390" height="498"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="676-6764065_default-profile-picture-transparent-hd-png-download" translatesAutoresizingMaskIntoConstraints="NO" id="3D7-Jq-eNk">
+                                <rect key="frame" x="60" y="155" width="270" height="88"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ma9-9f-NwO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3D7-Jq-eNk" firstAttribute="top" secondItem="ma9-9f-NwO" secondAttribute="top" constant="15" id="ClX-Hw-qnb"/>
+                            <constraint firstItem="glQ-l9-xAR" firstAttribute="height" secondItem="woU-fA-T4M" secondAttribute="height" multiplier="0.59" id="QUx-L9-0vb"/>
+                            <constraint firstItem="3D7-Jq-eNk" firstAttribute="leading" secondItem="ma9-9f-NwO" secondAttribute="leading" constant="60" id="Smz-YJ-fRR"/>
+                            <constraint firstItem="glQ-l9-xAR" firstAttribute="top" secondItem="3D7-Jq-eNk" secondAttribute="bottom" constant="20" id="W6S-qQ-YxV"/>
+                            <constraint firstItem="ma9-9f-NwO" firstAttribute="trailing" secondItem="3D7-Jq-eNk" secondAttribute="trailing" constant="60" id="Yh0-kp-eGC"/>
+                            <constraint firstItem="ma9-9f-NwO" firstAttribute="trailing" secondItem="glQ-l9-xAR" secondAttribute="trailing" id="ddk-6o-VwA"/>
+                            <constraint firstItem="ma9-9f-NwO" firstAttribute="bottom" secondItem="glQ-l9-xAR" secondAttribute="bottom" id="vEf-BY-51a"/>
+                            <constraint firstItem="glQ-l9-xAR" firstAttribute="leading" secondItem="ma9-9f-NwO" secondAttribute="leading" id="zhd-Kt-Q6I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="KRT-Fd-XUL"/>
+                    <connections>
+                        <outlet property="tableView" destination="glQ-l9-xAR" id="SpO-v6-djv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xH-Yf-wK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="1518"/>
+        </scene>
         <!--Main Tab BarVC-->
         <scene sceneID="cXg-ug-3YR">
             <objects>
@@ -386,7 +435,7 @@
                     <connections>
                         <segue destination="kbe-EX-boW" kind="relationship" relationship="viewControllers" id="Rjg-cN-m3p"/>
                         <segue destination="8Qj-Gb-Utw" kind="relationship" relationship="viewControllers" id="1Mo-qF-Wuo"/>
-                        <segue destination="Ld1-cN-F8N" kind="relationship" relationship="viewControllers" id="KvG-SG-wJF"/>
+                        <segue destination="ljc-hi-2G2" kind="relationship" relationship="viewControllers" id="KvG-SG-wJF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCo-FK-FQy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -539,6 +588,25 @@
             </objects>
             <point key="canvasLocation" x="-829" y="820"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OTq-o7-epf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ljc-hi-2G2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="jrf-g9-GC1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="FZP-VQ-oiS">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wmb-6t-w8u" kind="relationship" relationship="rootViewController" id="5o4-NX-J3L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VOf-Gs-2Ql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="820"/>
+        </scene>
         <!--UINavigationController-gXu-6Q-d3G-->
         <scene sceneID="zOE-3r-Zls">
             <objects>
@@ -555,7 +623,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="HomeVC" storyboardName="Home" referencedIdentifier="HomeVC" id="icz-oJ-bnO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTF-dJ-Rgt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="926"/>
+            <point key="canvasLocation" x="-55.38461538461538" y="1518.4834123222747"/>
         </scene>
         <!--UINavigationController-sEs-4U-YjO-->
         <scene sceneID="AfJ-Fc-ndN">
@@ -573,36 +641,11 @@
                 <viewControllerPlaceholder storyboardIdentifier="TransactionVC" storyboardName="TransactionStory" referencedIdentifier="TransactionVC" id="J7O-zx-uOA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p57-x0-lIT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711" y="926"/>
-        </scene>
-        <!--UINavigationController-ljc-hi-2G2-->
-        <scene sceneID="lu0-nf-xrV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="UINavigationController-ljc-hi-2G2" id="Ld1-cN-F8N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ZIc-eV-oBH"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cMp-mx-Lpj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1442" y="820"/>
-        </scene>
-        <!--SettingsVC-->
-        <scene sceneID="fap-6e-OZy">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SettingsVC" storyboardName="Settings" referencedIdentifier="SettingsVC" id="K1c-jO-WDh" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FsV-gE-tre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1442" y="926"/>
-        </scene>
-        <!--ReceiveVC-->
-        <scene sceneID="dtQ-Sd-Diy">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rb1-5U-Icg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardIdentifier="ReceiveVC" storyboardName="Receive" referencedIdentifier="ReceiveVC" id="JSm-9N-SSW" sceneMemberID="viewController"/>
-            </objects>
-            <point key="canvasLocation" x="711" y="1032"/>
+            <point key="canvasLocation" x="710.76923076923072" y="1517.7725118483411"/>
         </scene>
     </scenes>
     <resources>
+        <image name="676-6764065_default-profile-picture-transparent-hd-png-download" width="324" height="290"/>
         <image name="EasyMoneyLogo" width="2048" height="2048"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

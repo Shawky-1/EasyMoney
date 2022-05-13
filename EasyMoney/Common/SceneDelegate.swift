@@ -19,21 +19,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
         
         // if user is logged in before
         if UserDefaults.standard.string(forKey: "email") != nil {
             // instantiate the main tab bar controller and set it as root view controller
             // using the storyboard identifier we set earlier
             let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarVC")
+        
             window?.rootViewController = mainTabBarController
-        } else {
-            // if user isn't logged in
-            // instantiate the navigation controller and set it as root view controller
-            // using the storyboard identifier we set earlier
-            let loginNavController = storyboard.instantiateViewController(identifier: "LoginVC")
-            window?.rootViewController = loginNavController
         }
     }
+//        } else {
+//            // if user isn't logged in
+//            // instantiate the navigation controller and set it as root view controller
+//            // using the storyboard identifier we set earlier
+//            let loginNavController = storyboard.instantiateViewController(identifier: "LoginVC")
+//            window?.rootViewController = loginNavController
+//        }
+//    }
     
     func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
         guard let window = self.window else {

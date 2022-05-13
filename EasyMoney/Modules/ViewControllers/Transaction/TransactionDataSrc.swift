@@ -12,6 +12,10 @@ import UIKit
 
 class TransactionDatasrc: NSObject {
     var viewModel: TransactionVM!
+    
+    var onNumberSelected: ((String) -> Void)? = nil
+    var onDelString: ((String) -> Void)? = nil
+
 }
 
 let transactionTitles = ["Send Credit", "Request credit", "Scan QR-Code"]
@@ -35,8 +39,19 @@ extension TransactionDatasrc: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath)as? TransactionsNumPad else {return UICollectionViewCell()}
+        if (indexPath.item <= 10){
         cell.digitsLabel.text = numbersArray[indexPath.item]
-        cell.lettersLabel.text = String(indexPath.item)
+            
+        }
+        else if (indexPath.item == 11){
+            cell.digitsLabel.isHidden = true
+            cell.lettersLabel.isHidden = true
+            cell.backgroundColor = .clear
+            cell.backImage.sizeToFit()
+            cell.backImage.image = UIImage(systemName: "delete.left.fill")
+            
+        }
+        
         return cell
         
     }
@@ -44,62 +59,23 @@ extension TransactionDatasrc: UICollectionViewDataSource{
 //MARK: CollectionView Delegate
 extension TransactionDatasrc: UICollectionViewDelegate {
     
-    //MARK: header dequeue
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        switch kind {
-            
-        case UICollectionView.elementKindSectionHeader:
-            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath)as? DialedNumbersHeader else {return UICollectionReusableView()}
-            header.ammountLabel.text = dialedNumbersString
-            
-            return header
-        case UICollectionView.elementKindSectionFooter:
-            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footerReuseIdentifier, for: indexPath)as? DialedNumbersFooter else {return UICollectionReusableView()}
-            return footer
-            
-        default:
-            
-            assert(false, "Unexpected element kind")
-        }
-    }
-    
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: collectionView.width, height: collectionView.height / 4.5)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let number = numbersArray[indexPath.item]
-        
-        
-        switch dialedNumbersString.filter({ $0 == "." }).count {
-        case 0:
-            if dialedNumbersString == "" && number == "." {
-                dialedNumbersString += "0"
-                dialedNumbersString += number
-            }
-            else{
-                dialedNumbersString += number
-            }
-        case 1:
-            if (number == "."){
-                print("String Already have a dot")
-                
-            }
-            else {
-                dialedNumbersString += number
-                
-            }
-        default:
-            return
+        if (indexPath.item <= 10) {
+            onNumberSelected?(number)
+
         }
-        collectionView.reloadData()
+        else if (indexPath.item == 11) {
+            onDelString?(number)
+        }
+        var backgroundColor = collectionView.cellForItem(at: indexPath)?.backgroundColor
+        
+        
     }
     
     
 }
-
+//MARK: CollectionView Layout
 extension TransactionDatasrc: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let leftRightPadding = collectionView.frame.width * 0.15

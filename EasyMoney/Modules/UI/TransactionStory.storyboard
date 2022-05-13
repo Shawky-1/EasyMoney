@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Transaction-->
+        <scene sceneID="xOv-dv-zew">
+            <objects>
+                <viewController storyboardIdentifier="TransactionVC" id="K6w-Qz-9fN" customClass="TransactionVC" customModule="EasyMoney" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wAJ-3b-OsC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V5S-dz-cK3">
+                                <rect key="frame" x="0.0" y="264" width="375" height="422"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qfg-zn-cld">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GKC-qU-5EW">
+                                <rect key="frame" x="0.0" y="140" width="375" height="124"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="S5t-Rm-eKX">
+                                <rect key="frame" x="37.666666666666657" y="706" width="300" height="50.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgf-Pt-lOb">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="50.666666666666664"/>
+                                        <color key="backgroundColor" red="0.90419345429999998" green="0.41529468510000001" blue="0.1288539638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Receive">
+                                                    <attributes>
+                                                        <font key="NSFont" size="20" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapReceive:" destination="K6w-Qz-9fN" eventType="touchUpInside" id="TIK-8z-jaf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3Y-17-2Vx">
+                                        <rect key="frame" x="180" y="0.0" width="120" height="50.666666666666664"/>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Send">
+                                                    <attributes>
+                                                        <font key="NSFont" size="20" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapSend:" destination="K6w-Qz-9fN" eventType="touchUpInside" id="HOo-jm-mOR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="I3Y-17-2Vx" firstAttribute="width" secondItem="S5t-Rm-eKX" secondAttribute="width" multiplier="0.4" id="TFe-D6-WWl"/>
+                                    <constraint firstItem="Kgf-Pt-lOb" firstAttribute="width" secondItem="S5t-Rm-eKX" secondAttribute="width" multiplier="0.4" id="cm1-nJ-vod"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t8R-aM-LgO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V5S-dz-cK3" firstAttribute="centerY" secondItem="t8R-aM-LgO" secondAttribute="centerY" id="0Kq-Lp-yHS"/>
+                            <constraint firstItem="S5t-Rm-eKX" firstAttribute="width" secondItem="V5S-dz-cK3" secondAttribute="width" multiplier="0.8" id="HQe-OF-Kna"/>
+                            <constraint firstItem="GKC-qU-5EW" firstAttribute="top" secondItem="t8R-aM-LgO" secondAttribute="top" id="TXU-yB-ZQZ"/>
+                            <constraint firstItem="S5t-Rm-eKX" firstAttribute="centerX" secondItem="t8R-aM-LgO" secondAttribute="centerX" id="VMT-qL-Uma"/>
+                            <constraint firstItem="t8R-aM-LgO" firstAttribute="trailing" secondItem="V5S-dz-cK3" secondAttribute="trailing" id="WPT-Io-y4Z"/>
+                            <constraint firstItem="t8R-aM-LgO" firstAttribute="trailing" secondItem="GKC-qU-5EW" secondAttribute="trailing" id="Xft-6a-vwZ"/>
+                            <constraint firstItem="V5S-dz-cK3" firstAttribute="leading" secondItem="t8R-aM-LgO" secondAttribute="leading" id="Xgc-sO-Hzp"/>
+                            <constraint firstItem="S5t-Rm-eKX" firstAttribute="top" secondItem="V5S-dz-cK3" secondAttribute="bottom" constant="20" id="b2p-kV-NVu"/>
+                            <constraint firstItem="S5t-Rm-eKX" firstAttribute="height" secondItem="wAJ-3b-OsC" secondAttribute="height" multiplier="0.06" id="fKM-RF-VP3"/>
+                            <constraint firstItem="GKC-qU-5EW" firstAttribute="leading" secondItem="t8R-aM-LgO" secondAttribute="leading" id="h0l-U9-i0t"/>
+                            <constraint firstItem="V5S-dz-cK3" firstAttribute="height" secondItem="wAJ-3b-OsC" secondAttribute="height" multiplier="0.5" id="klI-b7-9ge"/>
+                            <constraint firstItem="V5S-dz-cK3" firstAttribute="top" secondItem="GKC-qU-5EW" secondAttribute="bottom" id="meC-lx-OHe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Transaction" largeTitleDisplayMode="always" id="MiH-jd-EX3"/>
+                    <connections>
+                        <outlet property="collectionView" destination="V5S-dz-cK3" id="geh-Sa-EwY"/>
+                        <outlet property="receiveButton" destination="Kgf-Pt-lOb" id="Wal-eq-1PM"/>
+                        <outlet property="sendButton" destination="I3Y-17-2Vx" id="Yol-cK-cBw"/>
+                        <outlet property="transactionAmmountLabel" destination="GKC-qU-5EW" id="NjW-dy-WmJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZm-YX-m3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710.76923076923072" y="1517.7725118483411"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2vr-Rh-fC9">
+            <objects>
+                <navigationController storyboardIdentifier="UINavigationController-sEs-4U-YjO" automaticallyAdjustsScrollViewInsets="NO" id="sEs-4U-YjO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="8bQ-3t-BeE"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="dXA-KR-zqh">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="K6w-Qz-9fN" kind="relationship" relationship="rootViewController" id="mXi-js-k6X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sVq-WB-cHS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710.76923076923072" y="819.66824644549763"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
