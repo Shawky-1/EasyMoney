@@ -24,6 +24,7 @@ class TransactionVC: BaseWireframe<TransactionVM>{
         
     }
     var totalAmmount = 0
+    var send = false
     
     override func bind(viewModel: TransactionVM) {
         viewModel
@@ -50,12 +51,14 @@ class TransactionVC: BaseWireframe<TransactionVM>{
         
         return src
     }()
-    
+    //MARK: Recieve/Send button
     @IBAction func didTapReceive(_ sender: UIButton) {
         navigateToReceive(transactionAmmount: totalAmmount)
+        send = false
     }
     @IBAction func didTapSend(_ sender: UIButton) {
         navigateToReceive(transactionAmmount: totalAmmount)
+        send = true
 
     }
     
@@ -117,7 +120,7 @@ extension TransactionVC {
 
 extension TransactionVC {
     func navigateToReceive(transactionAmmount: Int){
-        let ReceiveVM = ReceiveVM(dataManager: DataManager.create(), ammount: transactionAmmount)
+        let ReceiveVM = ReceiveVM(dataManager: DataManager.create(), ammount: (transactionAmmountLabel.text! as NSString).integerValue, didTapSend: send)
         let ReceiveVC = ReceiveVC.make(from: .main, with: ReceiveVM)
         ReceiveVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ReceiveVC, animated: true)

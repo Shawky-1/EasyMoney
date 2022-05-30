@@ -14,6 +14,8 @@ class TransactionsNumPad: UICollectionViewCell {
     let backImage = UIImageView()
     let defaultColor = UIColor(white: 0.92, alpha: 1)
     
+    // red:246, green: 113, blue: 27
+    
     //    override var isHighlighted: Bool{
     //        didSet{
     //            backgroundColor = isHighlighted ? .darkGray : UIColor(white: 0.92, alpha: 1)
@@ -22,6 +24,7 @@ class TransactionsNumPad: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             animateButton()
+            
         }
     }
     

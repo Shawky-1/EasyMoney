@@ -22,14 +22,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var createAccountButton: UIButton!
     
-    
-    
-    
-    
-    
-    
     let database = Firestore.firestore()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +31,6 @@ class RegisterVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
     }
-    
     
     //MARK: CreateButtonClicked
     @IBAction func clickedCreateButton(_ sender: UIButton) {
@@ -79,14 +71,9 @@ class RegisterVC: UIViewController {
             alert.addAction(UIAlertAction(title: "Continue", style: .default))
             self.present(alert, animated: true)
             self.navigationController?.popViewController(animated: true)
-
+            
         })
-        
-
-        
     }
-    
-    
 }
 
 extension RegisterVC{

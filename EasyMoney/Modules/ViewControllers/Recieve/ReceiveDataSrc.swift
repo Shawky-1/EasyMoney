@@ -16,14 +16,15 @@ class ReceiveVCDataSrc: NSObject {
 
 extension ReceiveVCDataSrc: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contactsName.count
+        return viewModel.contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiveCell", for: indexPath)as? ReceiveCell else {return UITableViewCell()}
-        let fullName = viewModel.contactsName[indexPath.row] + " " +  viewModel.contactsFamilyName[indexPath.row]
+        let contact = viewModel.contacts[indexPath.row]
+        let fullName = contact.firstName + " " + contact.lastName
         cell.name.text = fullName
-        cell.number.text = viewModel.contactsNumber[indexPath.row]
+        cell.number.text = contact.phoneNumber
         cell.contactLogo.image = viewModel.imageWith(name: fullName)
         
         

@@ -16,17 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="From" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-gd-NpP" customClass="DesignableUITextField" customModule="EasyMoney" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="To" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bc5-Qr-1mr">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test" placeholder="For" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bc5-Qr-1mr">
                                 <rect key="frame" x="0.0" y="89" width="414" height="44.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -35,27 +25,33 @@
                                 <rect key="frame" x="0.0" y="133.5" width="414" height="728.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" text="" placeholder="@username or email or name" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-oI-A3U">
+                                <rect key="frame" x="0.0" y="44" width="414" height="45"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wbu-4W-YnM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YSE-gd-NpP" firstAttribute="top" secondItem="Wbu-4W-YnM" secondAttribute="top" id="0kE-Im-41m"/>
-                            <constraint firstItem="Wbu-4W-YnM" firstAttribute="trailing" secondItem="YSE-gd-NpP" secondAttribute="trailing" id="1BS-wD-Ai0"/>
                             <constraint firstItem="Wbu-4W-YnM" firstAttribute="trailing" secondItem="y8o-cH-xvM" secondAttribute="trailing" id="20j-ec-2uL"/>
+                            <constraint firstItem="Sw6-oI-A3U" firstAttribute="top" secondItem="Wbu-4W-YnM" secondAttribute="top" id="6Kg-Tq-8rk"/>
                             <constraint firstItem="Wbu-4W-YnM" firstAttribute="bottom" secondItem="y8o-cH-xvM" secondAttribute="bottom" id="Au8-zL-GKF"/>
-                            <constraint firstItem="Bc5-Qr-1mr" firstAttribute="height" secondItem="YSE-gd-NpP" secondAttribute="height" id="Gf1-Sz-Wyg"/>
-                            <constraint firstItem="YSE-gd-NpP" firstAttribute="leading" secondItem="Wbu-4W-YnM" secondAttribute="leading" id="K1t-Lm-aSI"/>
-                            <constraint firstItem="Bc5-Qr-1mr" firstAttribute="top" secondItem="YSE-gd-NpP" secondAttribute="bottom" id="QqP-b3-E4h"/>
+                            <constraint firstItem="Bc5-Qr-1mr" firstAttribute="height" secondItem="Sw6-oI-A3U" secondAttribute="height" id="PUH-Zi-dag"/>
+                            <constraint firstItem="Sw6-oI-A3U" firstAttribute="leading" secondItem="Wbu-4W-YnM" secondAttribute="leading" id="Psc-Xy-e1q"/>
                             <constraint firstItem="Bc5-Qr-1mr" firstAttribute="trailing" secondItem="Wbu-4W-YnM" secondAttribute="trailing" id="WBn-3c-G85"/>
                             <constraint firstItem="Bc5-Qr-1mr" firstAttribute="leading" secondItem="Wbu-4W-YnM" secondAttribute="leading" id="WFw-4k-klS"/>
+                            <constraint firstItem="Bc5-Qr-1mr" firstAttribute="top" secondItem="Sw6-oI-A3U" secondAttribute="bottom" id="ZVs-6T-3aH"/>
                             <constraint firstItem="y8o-cH-xvM" firstAttribute="top" secondItem="Bc5-Qr-1mr" secondAttribute="bottom" id="esT-os-m6D"/>
                             <constraint firstItem="y8o-cH-xvM" firstAttribute="leading" secondItem="Wbu-4W-YnM" secondAttribute="leading" id="ivs-MJ-2fw"/>
-                            <constraint firstItem="YSE-gd-NpP" firstAttribute="height" secondItem="4fI-nz-ETo" secondAttribute="height" multiplier="0.05" id="okr-Lp-r8o"/>
+                            <constraint firstItem="Sw6-oI-A3U" firstAttribute="height" secondItem="4fI-nz-ETo" secondAttribute="height" multiplier="0.05" id="knL-ON-j6T"/>
+                            <constraint firstItem="Sw6-oI-A3U" firstAttribute="trailing" secondItem="Wbu-4W-YnM" secondAttribute="trailing" id="xuS-pN-y4u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="EM1-hY-f3G"/>
                     <connections>
                         <outlet property="contactsTableView" destination="y8o-cH-xvM" id="r9V-1N-3sh"/>
+                        <outlet property="forTextField" destination="Bc5-Qr-1mr" id="JYT-CW-GZs"/>
+                        <outlet property="searchBar" destination="Sw6-oI-A3U" id="P7T-w0-grz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gpm-NR-v2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -63,11 +59,6 @@
             <point key="canvasLocation" x="-55.072463768115945" y="2176.3392857142858"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="YSE-gd-NpP">
-            <size key="intrinsicContentSize" width="39.5" height="22"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

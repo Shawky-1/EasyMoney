@@ -63,12 +63,13 @@ extension TransactionDatasrc: UICollectionViewDelegate {
         let number = numbersArray[indexPath.item]
         if (indexPath.item <= 10) {
             onNumberSelected?(number)
+            
 
         }
         else if (indexPath.item == 11) {
             onDelString?(number)
         }
-        var backgroundColor = collectionView.cellForItem(at: indexPath)?.backgroundColor
+//        var backgroundColor = collectionView.cellForItem(at: indexPath)?.backgroundColor
         
         
     }

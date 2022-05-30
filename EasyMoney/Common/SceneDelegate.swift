@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
+//        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
         
         // if user is logged in before
         if UserDefaults.standard.string(forKey: "email") != nil {

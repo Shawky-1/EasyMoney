@@ -45,6 +45,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     //MARK: Login button
     @IBAction func didTapLogin(_ sender: UIButton) {
+//        emailTextField.validatedText(validationType: .email )
+
+        
+        
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty else {
                   //MARK: EmptyLogin
@@ -72,19 +76,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(email, forKey: "email")
         })
     }
-    
-
-    @IBAction func didTapSkip(_ sender: UIButton) {
-    }
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        let reciverVC = segue.destination as? RegisterVC
-    //        if let text = emailTextField.text{
-    //            reciverVC?.emailTextField.text = text
-    //        }
-    //    }
-    
-    
     
 }
 

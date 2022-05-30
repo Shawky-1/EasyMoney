@@ -16,6 +16,7 @@
 		E2676B90282B5A49001E4BD6 /* Receive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2676B8F282B5A49001E4BD6 /* Receive.storyboard */; };
 		E2676B96282CD54E001E4BD6 /* ReceiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2676B94282CD54E001E4BD6 /* ReceiveCell.swift */; };
 		E2676B97282CD54E001E4BD6 /* ReceiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2676B95282CD54E001E4BD6 /* ReceiveCell.xib */; };
+		E2676B9A282E1FF4001E4BD6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2676B99282E1FF4001E4BD6 /* Contact.swift */; };
 		E2707ABB27D5186D00BB8DF0 /* TransactionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2707ABA27D5186D00BB8DF0 /* TransactionVM.swift */; };
 		E2707ABD27D5187500BB8DF0 /* TransactionDataSrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2707ABC27D5187500BB8DF0 /* TransactionDataSrc.swift */; };
 		E2707ABF27D582B600BB8DF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2707ABE27D582B600BB8DF0 /* GoogleService-Info.plist */; };
@@ -98,6 +99,7 @@
 		E2676B8F282B5A49001E4BD6 /* Receive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Receive.storyboard; sourceTree = "<group>"; };
 		E2676B94282CD54E001E4BD6 /* ReceiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveCell.swift; sourceTree = "<group>"; };
 		E2676B95282CD54E001E4BD6 /* ReceiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveCell.xib; sourceTree = "<group>"; };
+		E2676B99282E1FF4001E4BD6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E2707ABA27D5186D00BB8DF0 /* TransactionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVM.swift; sourceTree = "<group>"; };
 		E2707ABC27D5187500BB8DF0 /* TransactionDataSrc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataSrc.swift; sourceTree = "<group>"; };
 		E2707ABE27D582B600BB8DF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -223,6 +225,14 @@
 				E2676B95282CD54E001E4BD6 /* ReceiveCell.xib */,
 			);
 			path = ReceiveCell;
+			sourceTree = "<group>";
+		};
+		E2676B98282E1FE9001E4BD6 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				E2676B99282E1FF4001E4BD6 /* Contact.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 		E2723C4127D463DE00C36946 /* Transaction */ = {
@@ -423,6 +433,7 @@
 		E2C3808D2741730D0069E9B3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E2676B98282E1FE9001E4BD6 /* DB */,
 				E2C0FA9727694A180003B07E /* Helper */,
 				E2C0FA9527694A180003B07E /* Manager */,
 				E2C0FA9C27694A180003B07E /* Model */,
@@ -690,6 +701,7 @@
 				E2C0FA832769485B0003B07E /* UITableView+Scrolling.swift in Sources */,
 				E2C0FA94276948D70003B07E /* SearchManager.swift in Sources */,
 				E29A787927664EB3004F6111 /* WalkThroughCell.swift in Sources */,
+				E2676B9A282E1FF4001E4BD6 /* Contact.swift in Sources */,
 				E28EBE7B276D577400D2BAE2 /* MainTabBar.swift in Sources */,
 				E28DBD5527F753E90062A33B /* textfield+designable.swift in Sources */,
 				E2C0FA852769485B0003B07E /* UIBarButtonItem+Extension.swift in Sources */,
