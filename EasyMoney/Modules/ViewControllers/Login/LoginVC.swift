@@ -13,13 +13,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!{
         didSet{
-            emailTextField.text = "test@test.com"
+            emailTextField.text = "ahmed@gmail.com"
             return
         }
     }
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet{
-            passwordTextField.text = "password"
+            passwordTextField.text = "010615"
         }
     }
     @IBOutlet weak var loginButton: UIButton!
@@ -68,12 +68,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 return
             }
             //MARK: Sucessful Login
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarVC")
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
             strongSelf.userEmail = email
             print ("\(email) have singed in")
-            UserDefaults.standard.set(email, forKey: "email")
+            self?.setupUserDefaults(email: email)
+            self?.navigateToHomeVC()
         })
     }
     
@@ -102,13 +100,6 @@ extension LoginVC{
         return alert
     }
     
-    func navigateToHomeVC() {
-        let homeVM = HomeVM(dataManager: DataManager.create())
-        let HomeVC = HomeVC.make(from: .main, with: homeVM)
-        self.navigationController?.pushViewController(HomeVC, animated: true)
-        
-    }
-    
     func textFieldNext(textField: UITextField) {
         textField.resignFirstResponder()
         if textField.text != nil { // Switch focus to other text field
@@ -121,7 +112,7 @@ extension LoginVC{
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if (text == "\n") {
+        if (text == "\n") {   
             textView.resignFirstResponder()
         }
         return true
@@ -133,6 +124,42 @@ extension LoginVC{
     
     @objc func enterDone(){
         passwordTextField.resignFirstResponder()
+    }
+    
+    func setupUserDefaults(email: String){
+        let defaults = UserDefaults.standard
+        let docRef = database.collection("Users/\(email)/Data").document("Info")
+        defaults.set(email, forKey: "email")
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let homeVC:HomeVM
+                let firstName = document.get("FirstName") as? String ?? ""
+                let lastName = document.get("LastName") as? String ?? ""
+                let balance = document.get("Balance")as? Double ?? 0
+                let birthDate = document.get("BirthDate")as? Date ?? Date()
+                let number = document.get("PhoneNumber")as? Int ?? 0
+                
+                defaults.set(firstName, forKey: "firstName")
+                defaults.set(lastName, forKey: "lastName")
+                defaults.set(birthDate, forKey: "birthDate")
+                defaults.set(balance, forKey: "balance")
+                defaults.set(number, forKey: "phoneNumber")
+                defaults.set(email, forKey: "email")
+                defaults.set(true, forKey: "loggedIn")
+                
+            } else {
+                print("Document does not exist")
+            }
+            
+        }
+        
+    }
+    
+    func navigateToHomeVC(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarVC")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
     }
     
 }

@@ -13,29 +13,33 @@ import ContactsUI
 import Firebase
 
 class ReceiveVM: ViewModel {
+    var TransactionVM: TransactionVM!
+    
     var isLoading: PublishSubject<Bool> = .init()
     var displayError: PublishSubject<String> = .init()
     var dataManager: DataManager
     var disposeBag: DisposeBag = .init()
     var refreshView = PublishSubject<Bool>()
-    var ammount = 0
-    var didTapSend = false
+    var ammount:Double
+    var receiver:String = ""
+    @Published var contacts = [Contact]()
+    var selectedContact:Contact?
+    var filteredUsers = [Contact]()
     let database = Firestore.firestore()
-    
+
     let firstName = UserDefaults.standard.value(forKey: "firstName")
     let lastName = UserDefaults.standard.value(forKey: "lastName")
     let email = UserDefaults.standard.value(forKey: "email")
-    @Published var contacts = [Contact]()
     
-    init(dataManager: DataManager, ammount: Int, didTapSend: Bool) {
+    init(dataManager: DataManager, ammount: Double, receiver: String) {
         self.dataManager = dataManager
         self.ammount = ammount
-        self.didTapSend = didTapSend
-        
+        self.receiver = receiver
     }
 }
 
 extension ReceiveVM {
+    
     
     func fetchContacts(){
         let store = CNContactStore()
@@ -49,10 +53,12 @@ extension ReceiveVM {
                 let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
                 do {
                     try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
+                        if contact.phoneNumbers.first != nil{
                         self.contacts.append(Contact(firstName: contact.givenName,
                                                      lastName: contact.familyName,
                                                      phoneNumber: contact.phoneNumbers.first?.value.stringValue ?? ""))
                         self.contacts.sort(by: { $0.firstName < $1.firstName })
+                        }
                         
                     })
                     
@@ -64,6 +70,7 @@ extension ReceiveVM {
                 print("access denied")
             }
         }
+        self.filteredUsers = self.contacts
     }
     
     func imageWith(name: String?) -> UIImage? {
@@ -127,19 +134,9 @@ extension ReceiveVM {
         Field.leftViewMode = .always
     }
     
-    func forOrTo() -> String{
-        if didTapSend == true{
-            return "To"
-        }
-        else{
-            return "From"
-        }
-        
-    }
-    
     func writeTransactionInfo(thisEmail:String, otherEmail:String, transactionAmmount:Int){
-        let ID = 123
-        database.collection("Users/\(String(thisEmail))/Data").document("TransactionHistory").setData([
+        let ID = UUID().uuidString
+        database.collection("Users/\(String(thisEmail))/TransactionHistory/").document(ID).setData([
             "TransactionAmmount": transactionAmmount,
             "Transferedto": otherEmail,
             "TransactionDate": Date(),
@@ -163,6 +160,11 @@ extension ReceiveVM {
                 print("Document successfully written!")
             }
         }
+    }
+    func changeTitle() -> String{
+        var title = ""
+        (receiver == "To") ? (title = "Send") : (title = "Receive")
+        return title
     }
     
 }

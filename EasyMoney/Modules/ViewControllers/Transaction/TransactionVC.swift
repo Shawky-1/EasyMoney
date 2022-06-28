@@ -24,7 +24,6 @@ class TransactionVC: BaseWireframe<TransactionVM>{
         
     }
     var totalAmmount = 0
-    var send = false
     
     override func bind(viewModel: TransactionVM) {
         viewModel
@@ -53,13 +52,13 @@ class TransactionVC: BaseWireframe<TransactionVM>{
     }()
     //MARK: Recieve/Send button
     @IBAction func didTapReceive(_ sender: UIButton) {
+        viewModel.setReceiverData(data: "From")
         navigateToReceive(transactionAmmount: totalAmmount)
-        send = false
+        
     }
     @IBAction func didTapSend(_ sender: UIButton) {
+        viewModel.setReceiverData(data: "To")
         navigateToReceive(transactionAmmount: totalAmmount)
-        send = true
-
     }
     
 }
@@ -120,7 +119,7 @@ extension TransactionVC {
 
 extension TransactionVC {
     func navigateToReceive(transactionAmmount: Int){
-        let ReceiveVM = ReceiveVM(dataManager: DataManager.create(), ammount: (transactionAmmountLabel.text! as NSString).integerValue, didTapSend: send)
+        let ReceiveVM = EasyMoney.ReceiveVM(dataManager: DataManager.create(), ammount: (transactionAmmountLabel.text! as NSString).doubleValue, receiver: viewModel.getReceiverData())
         let ReceiveVC = ReceiveVC.make(from: .main, with: ReceiveVM)
         ReceiveVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ReceiveVC, animated: true)

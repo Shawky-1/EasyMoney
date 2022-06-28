@@ -22,12 +22,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
         
         // if user is logged in before
-        if UserDefaults.standard.string(forKey: "email") != nil {
+
+        if UserDefaults.standard.string(forKey: "loggedIn") != nil {
             // instantiate the main tab bar controller and set it as root view controller
             // using the storyboard identifier we set earlier
             let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarVC")
         
             window?.rootViewController = mainTabBarController
+        }
+        else {
+            let loginVC = storyboard.instantiateViewController(identifier: "LoginVC")
+            window?.rootViewController = loginVC
+
         }
     }
 //        } else {

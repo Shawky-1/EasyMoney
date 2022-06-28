@@ -19,53 +19,81 @@ class ReceiveVC: BaseWireframe<ReceiveVM> {
     }
     @IBOutlet weak var searchBar: UISearchBar!{
         didSet{
-//            searchBar.sizeToFit()
-//            searchBar.layer.cornerRadius = 0
-//            searchBar.clipsToBounds = true
-//            searchBar.placeholder = "Search"
             searchBar.searchTextField.backgroundColor = .clear
+            searchBar.delegate = ReceiveDataSrc
         }
     }
     @IBOutlet weak var forTextField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        registerCells()
-        viewModel.fetchContacts()
-        viewModel.addLeftImageTo(Field: self.forTextField, Image: viewModel.imageText(name: "For") ?? UIImage())
-        viewModel.addLeftImageTo(Field: searchBar.searchTextField, Image: viewModel.imageText(name: viewModel.forOrTo()) ?? UIImage())
-        print(viewModel.forOrTo())
-        print(viewModel.ammount)
-        print(UserDefaults.standard.value(forKey: "email") ?? "")
-        viewModel.writeTransactionInfo(thisEmail: viewModel.email as! String, otherEmail: "Test2@test.com", transactionAmmount: viewModel.ammount)
-    }
+    @IBOutlet weak var continueBtn: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.addLeftImageTo(Field: self.forTextField, Image: viewModel.imageText(name: "For") ?? UIImage())
+        viewModel.addLeftImageTo(Field: searchBar.searchTextField, Image: viewModel.imageText(name: viewModel.receiver) ?? UIImage())
+        
     }
-    
+    //MARK: ViewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = viewModel.changeTitle()
+        registerCells()
+        viewModel.fetchContacts()
+
+    }
     
     func registerCells(){
         contactsTableView.register(cell: ReceiveCell.self)
     }
-    
-    
+    //MARK: ReceiveDataSrc
     private lazy var ReceiveDataSrc: ReceiveVCDataSrc = {
         let src = EasyMoney.ReceiveVCDataSrc()
         src.viewModel = viewModel
+        src.onItemSelected = { [weak self] selectedContact in
+            guard let self = self else {return}
+            self.viewModel.selectedContact = selectedContact
+            self.selectName(name: selectedContact.firstName)
+            self.continueBtn.isHidden = false
+        }
+        src.onReloadData = { [weak self] in
+            guard let self = self else {return}
+            self.contactsTableView.reloadData()
+            
+        }
+        
+        src.onContinueShow = { [weak self] in
+            guard let self = self else {return}
+            self.continueBtn.isHidden = true
+            
+        }
         return src
     }()
-    
+    //MARK: Bind function
     override func bind(viewModel: ReceiveVM) {
         viewModel
             .refreshView
             .asDriver(onErrorJustReturn: false)
-            .drive(onNext:{[weak self] state in
+            .drive(onNext:{state in
                 guard state else {return}
             }).disposed(by: disposeBag)
     }
-
+    @IBAction func clickContinue(_ sender: UIButton) {
+        navigateToConfirmVM(transactionAmmount: Double(viewModel.ammount))
+    }
+    
 }
 
+//MARK: Extention Function
 extension ReceiveVC {
+    
+    func selectName(name: String){
+        searchBar.searchTextField.text = name
+    }
+    
+    func navigateToConfirmVM(transactionAmmount: Double) {
+        let confirmVM = ConfirmVM(dataManager: DataManager.create(), transactionAmmount: transactionAmmount, contact: viewModel.selectedContact!)
+        let confirmVC = ConfirmVC.make(from: .main, with: confirmVM)
+        confirmVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(confirmVC, animated: true)
+        
+    }
 
 }

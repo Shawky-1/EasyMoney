@@ -10,6 +10,8 @@
 		E214ED382764EA9000274FD3 /* WalkThroughData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214ED372764EA9000274FD3 /* WalkThroughData.swift */; };
 		E22AEB5F27D262E1004F68CF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22AEB5E27D262E1004F68CF /* LoginVC.swift */; };
 		E22AEB6427D2C733004F68CF /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22AEB6227D2C733004F68CF /* RegisterVC.swift */; };
+		E265B4CF2866A931001F362E /* ConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265B4CE2866A931001F362E /* ConfirmVC.swift */; };
+		E265B4D12866A938001F362E /* ConfirmVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265B4D02866A938001F362E /* ConfirmVM.swift */; };
 		E2676B8228298146001E4BD6 /* ReceiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2676B8128298146001E4BD6 /* ReceiveVC.swift */; };
 		E2676B842829814E001E4BD6 /* ReceiveVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2676B832829814E001E4BD6 /* ReceiveVM.swift */; };
 		E2676B8628298158001E4BD6 /* ReceiveDataSrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2676B8528298158001E4BD6 /* ReceiveDataSrc.swift */; };
@@ -27,6 +29,8 @@
 		E27F16D027698145000EC632 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27F16CF27698145000EC632 /* MainTabBarVC.swift */; };
 		E28DBD5527F753E90062A33B /* textfield+designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28DBD5427F753E90062A33B /* textfield+designable.swift */; };
 		E28EBE7B276D577400D2BAE2 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28EBE7A276D577400D2BAE2 /* MainTabBar.swift */; };
+		E29690C928698FCF000B9A1C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29690C828698FCE000B9A1C /* Transaction.swift */; };
+		E29690CB2869953F000B9A1C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29690CA2869953F000B9A1C /* UserInfo.swift */; };
 		E29A787927664EB3004F6111 /* WalkThroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A787827664EB3004F6111 /* WalkThroughCell.swift */; };
 		E29D20EF27E7AECB008E8DF3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29D20EE27E7AECB008E8DF3 /* Home.storyboard */; };
 		E29D20F527E82555008E8DF3 /* TransactionStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29D20F427E82555008E8DF3 /* TransactionStory.storyboard */; };
@@ -93,6 +97,8 @@
 		E214ED372764EA9000274FD3 /* WalkThroughData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughData.swift; sourceTree = "<group>"; };
 		E22AEB5E27D262E1004F68CF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E22AEB6227D2C733004F68CF /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		E265B4CE2866A931001F362E /* ConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmVC.swift; sourceTree = "<group>"; };
+		E265B4D02866A938001F362E /* ConfirmVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmVM.swift; sourceTree = "<group>"; };
 		E2676B8128298146001E4BD6 /* ReceiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveVC.swift; sourceTree = "<group>"; };
 		E2676B832829814E001E4BD6 /* ReceiveVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveVM.swift; sourceTree = "<group>"; };
 		E2676B8528298158001E4BD6 /* ReceiveDataSrc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveDataSrc.swift; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 		E27F16CF27698145000EC632 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		E28DBD5427F753E90062A33B /* textfield+designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "textfield+designable.swift"; sourceTree = "<group>"; };
 		E28EBE7A276D577400D2BAE2 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		E29690C828698FCE000B9A1C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		E29690CA2869953F000B9A1C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E29A787827664EB3004F6111 /* WalkThroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughCell.swift; sourceTree = "<group>"; };
 		E29D20EE27E7AECB008E8DF3 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E29D20F427E82555008E8DF3 /* TransactionStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TransactionStory.storyboard; sourceTree = "<group>"; };
@@ -208,6 +216,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		E265B4CD2866A914001F362E /* Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				E265B4CE2866A931001F362E /* ConfirmVC.swift */,
+				E265B4D02866A938001F362E /* ConfirmVM.swift */,
+			);
+			path = Confirm;
+			sourceTree = "<group>";
+		};
 		E2676B7A28281EEE001E4BD6 /* Recieve */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				E2676B99282E1FF4001E4BD6 /* Contact.swift */,
+				E29690C828698FCE000B9A1C /* Transaction.swift */,
+				E29690CA2869953F000B9A1C /* UserInfo.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -266,6 +285,7 @@
 				E2DB4C6427692E1F00A46B94 /* Home */,
 				E2723C4127D463DE00C36946 /* Transaction */,
 				E2676B7A28281EEE001E4BD6 /* Recieve */,
+				E265B4CD2866A914001F362E /* Confirm */,
 				E2D6E63527CAABBE005951EA /* Settings */,
 			);
 			path = ViewControllers;
@@ -659,6 +679,7 @@
 				E2C0FA842769485B0003B07E /* TextFieldExtensions.swift in Sources */,
 				E2D13BDB276A623F0007752E /* HomeDataSrc.swift in Sources */,
 				E2C0FA7D2769485B0003B07E /* CollectionViewEx.swift in Sources */,
+				E265B4CF2866A931001F362E /* ConfirmVC.swift in Sources */,
 				E2C0FA7E2769485B0003B07E /* IntExtension.swift in Sources */,
 				E2DB4C6827692E5100A46B94 /* HomeVC.swift in Sources */,
 				E2C0FA90276948D70003B07E /* ValidationManger.swift in Sources */,
@@ -673,6 +694,7 @@
 				E2D6E63D27CAB319005951EA /* SettingsCell.swift in Sources */,
 				E27F16D027698145000EC632 /* MainTabBarVC.swift in Sources */,
 				E2676B8628298158001E4BD6 /* ReceiveDataSrc.swift in Sources */,
+				E265B4D12866A938001F362E /* ConfirmVM.swift in Sources */,
 				E2A893FE27DBD51900880582 /* TransactionsNumPad.swift in Sources */,
 				E22AEB5F27D262E1004F68CF /* LoginVC.swift in Sources */,
 				E2C0FA872769485B0003B07E /* UIView+constrains.swift in Sources */,
@@ -703,10 +725,12 @@
 				E29A787927664EB3004F6111 /* WalkThroughCell.swift in Sources */,
 				E2676B9A282E1FF4001E4BD6 /* Contact.swift in Sources */,
 				E28EBE7B276D577400D2BAE2 /* MainTabBar.swift in Sources */,
+				E29690CB2869953F000B9A1C /* UserInfo.swift in Sources */,
 				E28DBD5527F753E90062A33B /* textfield+designable.swift in Sources */,
 				E2C0FA852769485B0003B07E /* UIBarButtonItem+Extension.swift in Sources */,
 				E2C0FA92276948D70003B07E /* Activity.swift in Sources */,
 				E2C0FA762769485B0003B07E /* TableViewEx.swift in Sources */,
+				E29690C928698FCF000B9A1C /* Transaction.swift in Sources */,
 				E2C380922741737D0069E9B3 /* WalkThroughVC.swift in Sources */,
 				E2C0FA93276948D70003B07E /* DateHelper.swift in Sources */,
 				E2D6E63727CAAE71005951EA /* SettingsVM.swift in Sources */,
