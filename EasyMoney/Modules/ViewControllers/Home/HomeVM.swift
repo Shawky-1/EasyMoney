@@ -61,15 +61,16 @@ extension HomeVM {
     func getInfo(balanceLbl: UILabel, welcomeLbl: UILabel) {
         let database = Firestore.firestore()
         let email = UserDefaults.standard.string(forKey: "email")
-        let docRef = database.collection("Users/\(email!)/Data").document("Info")
+        let docRef = database.collection("Users/\(email ?? "ahmed@gmail.com")/Data").document("Info")
         
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let firstName = document.get("FirstName")as? String ?? ""
                 let lastName = document.get("LastName")as? String ?? ""
                 let balance = document.get("Balance")as? Double ?? 0
+                let formattedBalance: String = String(format: "%.2f", balance)
                 
-                balanceLbl.text = "EGP \(String(balance))"
+                balanceLbl.text = "EGP \(String(formattedBalance))"
                 welcomeLbl.text = "Welcome \(firstName) \(lastName)"
                 
                 UserDefaults.standard.set(balance, forKey: "balance")
@@ -85,7 +86,7 @@ extension HomeVM {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
 
-        database.collection("Users/\(email!)/TransactionHistory").getDocuments { (snapshot, error) in
+        database.collection("Users/\(email ?? "ahmed@gmail.com")/TransactionHistory").getDocuments { (snapshot, error) in
             if let error = error{
                 print(error.localizedDescription)
             } else {

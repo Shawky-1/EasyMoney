@@ -44,7 +44,7 @@ class ConfirmVM: ViewModel {
 extension ConfirmVM {
         
     func getData() {
-        let docRef = database.collection("Users").whereField("PhoneNumber", isEqualTo: Int(contact.phoneNumber))
+        let docRef = database.collection("Users").whereField("PhoneNumber", isEqualTo: Int(removePrefix(number: contact.phoneNumber))!)
         
         docRef.getDocuments { snapshot, error in
             if let error = error{
@@ -201,6 +201,12 @@ extension ConfirmVM {
         } else {
             Label.text = "Would you like to receive this ammount from \(contact.firstName) \(contact.lastName)?"
         }
+    }
+    
+    func removePrefix(number: String) -> String {
+        let prefix = "+2" // What ever you want may be an array and step thru it
+        guard number.hasPrefix(prefix) else { return number }
+        return String(number.dropFirst(prefix.count).trimmingCharacters(in: .whitespacesAndNewlines))
     }
 }
 

@@ -21,9 +21,16 @@ class ReceiveVC: BaseWireframe<ReceiveVM> {
         didSet{
             searchBar.searchTextField.backgroundColor = .clear
             searchBar.delegate = ReceiveDataSrc
+            searchBar.searchTextField.delegate = self
+
+
         }
     }
-    @IBOutlet weak var forTextField: UITextField!
+    @IBOutlet weak var forTextField: UITextField!{
+        didSet{
+            forTextField.delegate = self
+        }
+    }
     @IBOutlet weak var continueBtn: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +44,6 @@ class ReceiveVC: BaseWireframe<ReceiveVM> {
         self.title = viewModel.changeTitle()
         registerCells()
         viewModel.fetchContacts()
-
     }
     
     func registerCells(){
@@ -99,4 +105,19 @@ extension ReceiveVC {
         
     }
 
+}
+
+extension ReceiveVC {
+    
+    @objc func enterDone(textField: UITextField){
+        textField.resignFirstResponder()
+    }
+}
+
+extension ReceiveVC:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
 }

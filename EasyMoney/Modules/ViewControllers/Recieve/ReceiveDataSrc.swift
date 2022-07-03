@@ -63,3 +63,11 @@ extension ReceiveVCDataSrc: UISearchBarDelegate {
     }
     
 }
+
+extension ReceiveVCDataSrc: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+}

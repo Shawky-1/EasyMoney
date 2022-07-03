@@ -44,11 +44,6 @@ class ConfirmVC: BaseWireframe<ConfirmVM> {
             let continueAction = UIAlertAction(title: "Continue", style: .default) { (action) in
                 UserDefaults.standard.set(viewModel.currentUpdatedBalance, forKey: "balance")
                 self.navigationController?.popToRootViewController(animated: true)
-//                let homeVM = HomeVM(dataManager: DataManager.create(), balance: viewModel.currentUpdatedBalance)
-//                let homeVC = HomeVC.make(from: .main, with: homeVM)
-//                homeVC.hidesBottomBarWhenPushed = true
-//                homeVC.modalPresentationStyle = .fullScreen
-//                self.present(homeVC, animated: true, completion: nil)
             }
             alert.addAction(continueAction)
             self.present(alert, animated: true)
@@ -60,7 +55,3 @@ class ConfirmVC: BaseWireframe<ConfirmVM> {
     }
 }
 
-extension ConfirmVC {
-
-    
-}
