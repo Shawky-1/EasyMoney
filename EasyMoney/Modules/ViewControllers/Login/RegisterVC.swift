@@ -58,6 +58,7 @@ extension RegisterVC{
                 print("account creation failed")
                 let alert = UIAlertController(title: "Sign-up Failed", message: "Press continue to go back", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Continue", style: .default))
+                self.present(alert, animated: true)
                 return
             }
             print ("you have singed in")
@@ -83,7 +84,17 @@ extension RegisterVC{
             "PhoneNumber": phoneNumber
         ]) { err in
             if let err = err {
-                print("Error writing document: \(err)")
+                NotifiyMessage.shared.toast(toastMessage: "Error making new account \(err.localizedDescription)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
+        database.collection("Users").document(email).setData([
+            "PhoneNumber": phoneNumber
+        ]) { err in
+            if let err = err {
+                NotifiyMessage.shared.toast(toastMessage: "Error making new account \(err.localizedDescription)")
             } else {
                 print("Document successfully written!")
             }

@@ -7,15 +7,16 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class ConfirmVC: BaseWireframe<ConfirmVM> {
     
-    @IBOutlet weak var profilePicture: UIImageView!
-    @IBOutlet weak var transactionDetails: UILabel!{
+    @IBOutlet weak var profilePicture: UIImageView!{
         didSet{
-            transactionDetails.text = viewModel.contact.firstName
+            profilePicture.image = viewModel.imageWith(name: viewModel.contact.firstName + " " + viewModel.contact.lastName)
         }
     }
+    @IBOutlet weak var transactionDetails: UILabel!
     @IBOutlet weak var transactionAmmount: UILabel!{
         didSet{
             transactionAmmount.text = String(viewModel.transactionAmmount)
@@ -25,6 +26,7 @@ class ConfirmVC: BaseWireframe<ConfirmVM> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.setupTextLabel(Label: transactionDetails)
 
     }
     
@@ -35,11 +37,26 @@ class ConfirmVC: BaseWireframe<ConfirmVM> {
             .drive(onNext:{ state in
                 guard state else {return}
             }).disposed(by: disposeBag)
+        
+        viewModel.onPopVC = { [weak self] in
+            guard let self = self else {return}
+            let alert = UIAlertController(title: "Transaction sucessfully made!", message: "Press continue to go back", preferredStyle: UIAlertController.Style.alert)
+            let continueAction = UIAlertAction(title: "Continue", style: .default) { (action) in
+                UserDefaults.standard.set(viewModel.currentUpdatedBalance, forKey: "balance")
+                self.navigationController?.popToRootViewController(animated: true)
+//                let homeVM = HomeVM(dataManager: DataManager.create(), balance: viewModel.currentUpdatedBalance)
+//                let homeVC = HomeVC.make(from: .main, with: homeVM)
+//                homeVC.hidesBottomBarWhenPushed = true
+//                homeVC.modalPresentationStyle = .fullScreen
+//                self.present(homeVC, animated: true, completion: nil)
+            }
+            alert.addAction(continueAction)
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func didClickConfirm(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.popViewController(animated: true)
+            viewModel.getData()
     }
 }
 

@@ -133,7 +133,6 @@ extension LoginVC{
 
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                let homeVC:HomeVM
                 let firstName = document.get("FirstName") as? String ?? ""
                 let lastName = document.get("LastName") as? String ?? ""
                 let balance = document.get("Balance")as? Double ?? 0

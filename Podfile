@@ -22,6 +22,7 @@ target 'EasyMoney' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
   pod 'IQKeyboardManagerSwift'
 
 

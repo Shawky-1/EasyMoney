@@ -13,7 +13,7 @@ class MainTabBarVC: UITabBarController{
         super.viewDidLoad()
         self.delegate = self
         
-        let item1 = HomeVC.make(from: .main, with: HomeVM(dataManager: .init()))
+        let item1 = HomeVC.make(from: .main, with: HomeVM(dataManager: .init(), balance: UserDefaults.standard.double(forKey: "balance")))
         let item2 = TransactionVC.make(from: .main, with: TransactionVM(dataManager: .init()))
         let item3 = SettingsVC.make(from: .main, with: SettingsVM(dataManager: .init()))
         

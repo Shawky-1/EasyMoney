@@ -37,7 +37,7 @@ class SettingsVC: BaseWireframe<SettingsVM> {
         viewModel
             .refreshView
             .asDriver(onErrorJustReturn: false)
-            .drive(onNext:{[weak self] state in
+            .drive(onNext:{ state in
                 guard state else {return}
             }).disposed(by: disposeBag)
     }

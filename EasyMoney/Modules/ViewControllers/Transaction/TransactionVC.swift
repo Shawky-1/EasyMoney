@@ -52,11 +52,19 @@ class TransactionVC: BaseWireframe<TransactionVM>{
     }()
     //MARK: Recieve/Send button
     @IBAction func didTapReceive(_ sender: UIButton) {
+        if totalAmmount < 5 {
+            NotifiyMessage.shared.toast(toastMessage: "Minimum ammount needed is 5 EGP")
+            shakeThisView()
+        }
         viewModel.setReceiverData(data: "From")
         navigateToReceive(transactionAmmount: totalAmmount)
         
     }
     @IBAction func didTapSend(_ sender: UIButton) {
+        if totalAmmount < 5 {
+            NotifiyMessage.shared.toast(toastMessage: "Minimum ammount needed is 5 EGP")
+            shakeThisView()
+        }
         viewModel.setReceiverData(data: "To")
         navigateToReceive(transactionAmmount: totalAmmount)
     }
@@ -74,7 +82,17 @@ extension TransactionVC {
     }
     
     func updateTransactionLabel(text: String){
-        //        transactionAmmountLabel.text? += text
+        
+        let intAmmount = Int(transactionAmmountLabel.text ?? "0") ?? 0
+        
+        if (text == "0" && transactionAmmountLabel.text == "0"){
+            shakeThisView()
+            return
+        }
+        if (intAmmount + (Int(text) ?? 0) > 999){
+            shakeThisView()
+            return
+        }
         switch transactionAmmountLabel.text?.filter({ $0 == "." }).count {
         case 0:
             if transactionAmmountLabel.text == "" && text == "." {
@@ -90,13 +108,13 @@ extension TransactionVC {
                 
             }
             else {
-//                if transactionAmmountLabel.text?.filter({$0 == "."})
                 transactionAmmountLabel.text? += text
                 
             }
         default:
             return
         }
+        
         totalAmmount = (transactionAmmountLabel.text! as NSString).integerValue
         
     }

@@ -11,9 +11,7 @@ import Foundation
 struct Transaction {
     var transactionID: String
     var transactionAmmount: Double
-    var transactionDate: Date
+    var transactionDate: String
     var transferedTo: String
     var transferedFrom: String
-    var transactionImage: String = ""
-
 }

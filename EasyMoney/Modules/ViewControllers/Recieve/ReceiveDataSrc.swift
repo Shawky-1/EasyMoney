@@ -27,7 +27,7 @@ extension ReceiveVCDataSrc: UITableViewDataSource {
         let contact = viewModel.filteredUsers[indexPath.row]
         let fullName = contact.firstName + " " + contact.lastName
         cell.name.text = fullName
-        cell.number.text = contact.phoneNumber
+        cell.number.text = String(contact.phoneNumber)
         cell.contactLogo.image = viewModel.imageWith(name: fullName)
         return cell
     }

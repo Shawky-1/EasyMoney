@@ -20,17 +20,14 @@ class HomeVC: BaseWireframe<HomeVM> {
             tableView.frame = .zero
         }
     }
-    @IBOutlet weak var balanceLbl: UILabel!{
-        didSet{
-            var balance = UserDefaults.standard.double(forKey: "balance")
-            balanceLbl.text = "EGP \(String(balance))"
-        }
-    }
+    @IBOutlet weak var balanceLbl: UILabel!
+    @IBOutlet weak var welcomeLbl: UILabel!
     
     //MARK: viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        viewModel.getTransactions()
+        reloadUI()
         let defaults = UserDefaults.standard
         let hasViewedWalkthrough = defaults.bool(forKey: "hasViewedWalkthrough")
         if hasViewedWalkthrough { return }
@@ -45,12 +42,14 @@ class HomeVC: BaseWireframe<HomeVM> {
     
     //MARK: viewDidLoad
     override func viewDidLoad() {
-        getInfo()
         super.viewDidLoad()
+        viewModel.getTransactions()
+        reloadUI()
         registerCells()
         viewModel.viewDidLoad()
         setupUI()
     }
+    
     //MARK: signUserOut
     @objc func signUserOut() {
         viewModel.signOut()
@@ -65,6 +64,15 @@ class HomeVC: BaseWireframe<HomeVM> {
     private lazy var HomeDataSrc: HomeDataSrc = {
         let src = EasyMoney.HomeDataSrc()
         src.viewModel = viewModel
+        
+        src.onItemSelected = { [weak self] id in
+            guard let self = self else {return}
+            let transactionDetailsVM = TransactionDetailsVM(dataManager: DataManager.create(), transaction: self.viewModel.transaction[id])
+
+            let transactionDetailsVC = TransactionDetailsVC.make(from: .main, with: transactionDetailsVM)
+            transactionDetailsVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(transactionDetailsVC, animated: true)
+        }
         return src
     }()
     
@@ -74,9 +82,15 @@ class HomeVC: BaseWireframe<HomeVM> {
         viewModel
             .refreshView
             .asDriver(onErrorJustReturn: false)
-            .drive(onNext:{ state in
+            .drive(onNext:{[weak self] state in
                 guard state else {return}
+                self?.reloadUI()
             }).disposed(by: disposeBag)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.transaction = []
     }
     
     
@@ -109,21 +123,8 @@ extension HomeVC {
     func setupUI() {
         setUpMenuButton()
     }
-    
-    
-    func getInfo() {
-        let database = Firestore.firestore()
-        let email = UserDefaults.standard.string(forKey: "email")
-        let docRef = database.collection("Users/\(email!)/Data").document("Info")
-        
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let balance = document.get("Balance")as? Double ?? 0
-                self.balanceLbl.text = "EGP \(String(balance))"
-            } else {
-                print("Document does not exist", UserDefaults.standard.string(forKey: "email") as Any)
-            }
-            
-        }
+    func reloadUI(){
+        viewModel.getInfo(balanceLbl: balanceLbl, welcomeLbl: welcomeLbl)
+        tableView.reloadData()
     }
 }

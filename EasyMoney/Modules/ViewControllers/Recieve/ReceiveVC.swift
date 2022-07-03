@@ -89,7 +89,10 @@ extension ReceiveVC {
     }
     
     func navigateToConfirmVM(transactionAmmount: Double) {
-        let confirmVM = ConfirmVM(dataManager: DataManager.create(), transactionAmmount: transactionAmmount, contact: viewModel.selectedContact!)
+        let confirmVM = ConfirmVM(dataManager: DataManager.create(),
+                                  transactionAmmount: transactionAmmount,
+                                  contact: viewModel.selectedContact!,
+                                  send: viewModel.send)
         let confirmVC = ConfirmVC.make(from: .main, with: confirmVM)
         confirmVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(confirmVC, animated: true)

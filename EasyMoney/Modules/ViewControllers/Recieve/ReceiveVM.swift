@@ -26,6 +26,7 @@ class ReceiveVM: ViewModel {
     var selectedContact:Contact?
     var filteredUsers = [Contact]()
     let database = Firestore.firestore()
+    var send = true
 
     let firstName = UserDefaults.standard.value(forKey: "firstName")
     let lastName = UserDefaults.standard.value(forKey: "lastName")
@@ -56,7 +57,7 @@ extension ReceiveVM {
                         if contact.phoneNumbers.first != nil{
                         self.contacts.append(Contact(firstName: contact.givenName,
                                                      lastName: contact.familyName,
-                                                     phoneNumber: contact.phoneNumbers.first?.value.stringValue ?? ""))
+                                                     phoneNumber: (contact.phoneNumbers[0].value).value(forKey: "digits") as! String))
                         self.contacts.sort(by: { $0.firstName < $1.firstName })
                         }
                         
@@ -104,7 +105,7 @@ extension ReceiveVM {
     }
     
     func imageText(name: String?) -> UIImage? {
-        let frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        let frame = CGRect(x: 0, y: 0, width: 50, height: 100)
         let nameLabel = UILabel(frame: frame)
         nameLabel.textAlignment = .center
         nameLabel.backgroundColor = .clear
@@ -164,6 +165,8 @@ extension ReceiveVM {
     func changeTitle() -> String{
         var title = ""
         (receiver == "To") ? (title = "Send") : (title = "Receive")
+        (receiver == "To") ? (send = true) : (send = false)
+
         return title
     }
     

@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public protocol ViewModel: class {
+public protocol ViewModel: AnyObject {
     var dataManager: DataManager { get set }
     var isLoading: PublishSubject<Bool> { get set }
     var displayError: PublishSubject<String> { get set }

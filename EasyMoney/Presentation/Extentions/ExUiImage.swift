@@ -262,7 +262,7 @@ public extension UIImage {
     ///
     /// - Returns: the resized image.
     ///
-    public func imageWithSize(size: CGSize) -> UIImage? {
+    func imageWithSize(size: CGSize) -> UIImage? {
         
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale);
         let rect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height);
@@ -285,7 +285,7 @@ public extension UIImage {
     ///         the final image's size will be equal to:
     ///         `CGSize(width: size.width + extraMargin * 2, height: size.height + extraMargin * 2)`
     ///
-    public func imageWithSize(size: CGSize, extraMargin: CGFloat) -> UIImage? {
+    func imageWithSize(size: CGSize, extraMargin: CGFloat) -> UIImage? {
         
         let imageSize = CGSize(width: size.width + extraMargin * 2, height: size.height + extraMargin * 2)
         
@@ -307,7 +307,7 @@ public extension UIImage {
     ///
     /// - Returns: the resized image with rounded corners.
     ///
-    public func imageWithSize(size: CGSize, roundedRadius radius: CGFloat) -> UIImage? {
+    func imageWithSize(size: CGSize, roundedRadius radius: CGFloat) -> UIImage? {
         
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         if let currentContext = UIGraphicsGetCurrentContext() {
